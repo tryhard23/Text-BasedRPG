@@ -1,0 +1,164 @@
+print("Lil Timmy's Adventure\nBy: Alexander Urena, Gilberto Vargas and Isaac Villa\n")
+print("""One day, Lil Timmy was just sitting  down at a park. 
+Suddenly he spotted an open portal from a different dimension. 
+He noticed an injured helpless Knight walk out and suddenly drops to the ground.
+The Knight appeared to be defeated with critical wounds, it was already too late 
+as the knight had fallen. Timmy had a bewildered look on his face.
+He then notices his sword which seemed very flashy as it was glowing and filled with power. 
+He picked it up and was worthy enough to wield it . Ooftana! The heavenly blade!""")
+print("\033[1;37;40mSuddenly a troll jumped from the portal and growled.\nLil Timmy wielded the sword and was ready for battle!")
+damage = 21
+char = 180
+def manticore(dmg):
+    concoction = 3
+    print("Looks like we can't run from this one!\nStart the Battle!")
+    HP = 250
+    player = char
+    while HP > 0:
+        dmg = damage
+        user = int(input("\033[1;32;40m1. Attack\n2. Heal\n3.Parry\nWrite a number: "))
+        if user == 1:
+            import random
+            x = random.randint(1,7)
+            if (x == 5):
+                print("\033[1;36;40mThe slippery monster evaded the attack!")
+            elif (x == 1 or x == 2 or x == 3):
+                HP -= dmg * 2
+                print("\033[1;33;40mA critical hit! \033[1;31;40mRemaining Enemy HP is",HP)
+            else:
+                HP -= dmg
+                print("\033[1;33;40mYou Attacked! \033[1;31;40mRemaining Enemy HP is",HP)
+            import random
+            x = random.randint(1,5)
+            if(x != 3):
+                player -= 30
+                print("\033[1;31;40mOuch it retaliated! \033[0;32;40mYour Remaining HP is",player)
+            else:
+                print("\033[1;36;40mWOW! That was a close one! You evaded the attack!")
+            if HP < 1:
+                print("\033[1;37;40mAnd so concluded Timmy's Adventure. \nHaving Defeated the Manticore, Timmy now rules the world!")
+                import sys
+                sys.exit()
+            elif player < 1:
+                print("\033[1;31;40mR.I.P. Timmy! GAME OVER!")
+                import sys
+                sys.exit()
+        elif user == 2:
+            if concoction > 0:
+                player += 35
+                concoction -= 1
+                print("\033[1;33;40m You took a gulp of a weird concoction")
+                print("\033[1;32;40m +35 HP.",concoction,"remain!")
+                import random
+                x = random.randint(1,3)
+                if(x != 2):
+                    player -= 15
+                    print("\033[1;31;40mOuch it grazed Timmy!","You have",player,"remaining!")
+        elif user == 3:
+            import random
+            x = random.randint(1,4)
+            if(x != 1):
+                HP -= dmg/1.75
+                player -= 3
+                print("\033[1;33;40mYou parried the enemy attack, \033[1;32;40myour remaining health is",player)
+                print("\033[1;31;40mRemaining Enemy health is",HP)
+            else:
+                player -= 30
+                print("\033[1;31;40mYou failed to parry the enemy attack, \033[1;32;40mremaining health is",player)
+            if HP < 1:
+                print("\033[1;37;40mAnd so concluded Timmy's Adventure. \nHaving Defeated the Manticore, Timmy now rules the world!")
+                import sys
+                sys.exit()
+            elif player < 1:
+                print("\033[1;31;40mR.I.P. Timmy! GAME OVER!")
+                import sys
+                sys.exit()
+#Starts the first Battle
+def play(dmg):
+    run = False
+    print("Start the Battle!")
+    HP = 100
+    player = char
+    while HP > 0 or run == False:
+        dmg = damage
+        user = int(input("\033[1;32;40m1. Attack\n2. Run\n3. Parry\nWrite a number: "))
+        if user == 1:
+            import random
+            x = random.randint(1,10)
+            if(x != 9):
+                HP -= dmg
+                print("\033[1;33;40mYou attacked, \033[1;31;40mremaining Enemy health is",HP)
+            else:
+                print("\033[1;36;40mThe slippery monster evaded the attack!")
+            player -= 30
+            print("\033[1;31;40mOuch it retaliated! \033[1;32;40mYour Remaining HP is",player)
+            if HP < 1:
+                print("\033[1;37;40mWith the troll defeated, Lil Timmy realised he was unstoppable,\nand so he proceeds to step into the open portal disregarding his family and friends")
+                print("He starts defeating every evil doer he spots in his vicinity, finally ending their reign of terror.")
+                playChoices()
+            elif player < 1:
+                print("\033[1;31;40mR.I.P. Timmy! GAME OVER!")
+                import sys
+                sys.exit()
+        elif user == 2:
+            run = True
+            print("\033[1;36;40mYou ran from the troll")
+            print("\033[1;37;40mRegardless of being a wuss. Timmy decides to disregard his family\nand enter the portal")
+            playChoices()
+        elif user == 3:
+            import random
+            x = random.randint(1,4)
+            if(x != 1):
+                HP -= dmg/1.75
+                player -= 3
+                print("\033[1;33;40mYou parried the enemy attack, \033[1;32;40myour remaining health is",player)
+                print("\033[1;31;40mRemaining Enemy health is",HP)
+            else:
+                player -= 30
+                print("\033[1;31;40mYou failed to parry the enemy attack, \033[1;32;40mremaining health is",player)
+            if HP < 1:
+                print("\033[1;37;40mWith the troll defeated, Lil Timmy realised he was unstoppable,\nand so he proceeds to step into the open portal disregarding his family and friends")
+                print("He starts defeating every evil doer he spots in his vicinity, finally ending their reign of terror.")
+                playChoices()
+            elif player < 1:
+                print("\033[1;31;40mR.I.P. Timmy! GAME OVER!")
+                import sys
+                sys.exit()
+#Plays the user's choices
+def playChoices():
+    user = int(input("\033[1;32;40m1. Train\n2.Explore\n3.Cry to your mom whom you disregarded\nwhat will you do? "))
+    if user == 1:
+        print("\033[1;37;40mTimmy doesn't feel like it. Spoiled Brat!")
+        playChoices()
+    elif user == 2:
+        import random
+        x = random.randint(1,20)
+        if(x == 3 or x == 7 or x == 10 or x == 15):
+            print("\033[1;37;40mWhat's that?")
+            print("\033[0;37;Lil Timmy confronts a big horned Manticore, which seemed very menacing.\nThe Manticore is a large elemental beast which has an aura of fire, water, air, earth\ndestroying anything in its path. Timmy realised the Manticore was the last enemy and toughest of them all.")
+            manticore(damage)
+        elif(x == 1):
+            print("\033[1;37;40mWhile exploring you encountered a chest. You walk towards it and suddenly the floor opens underneath you and you fall.\033[1;31;40m Game Over")
+            import sys
+            sys.exit()
+        elif(x == 5 or x == 20):
+            print("\033[1;37;40mWhile exploring you found a chest! It contained letters from your family begging you to come home.\nDon't know how they got here.")
+            playChoices()
+        else:
+            print("\033[1;37;40mNothing seems to be happening...")
+            playChoices()
+    elif user == 3:
+        import random
+        x = random.randint(1,5)
+        if(x == 3):
+            print("\033[1;37;40mToo late now cry baby! Go on a killing rampage or something!")
+        elif(x == 1):
+            print("\033[1;37;40mStop crying and get to killing! You can't go back now the portal has closed!")
+        else:
+            print("\033[1;37;40mThat's enough crying loser. Just get on with the adventure.")
+        playChoices()
+    else:
+        print("wait... what did you do?")
+        playChoices()
+play(damage)
+
