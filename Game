@@ -147,11 +147,15 @@ def playChoices():
             playChoices()
     elif user == 3:
         import random
-        x = random.randint(1,5)
+        x = random.randint(1,6)
         if(x == 3):
             print("\033[1;37;40mToo late now cry baby! Go on a killing rampage or something!")
         elif(x == 1):
             print("\033[1;37;40mStop crying and get to killing! You can't go back now the portal has closed!")
+        elif(x == 1):
+            print("\033[1;37;40mIt was a lie! The portal was openable!\nTimmy bolted for the portal with tears flowing from his eyes!\nA dazzling light. Did he make it? I won't allow it.")
+            import sys
+            sys.exit()
         else:
             print("\033[1;37;40mThat's enough crying loser. Just get on with the adventure.")
         playChoices()
