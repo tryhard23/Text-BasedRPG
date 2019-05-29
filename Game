@@ -36,7 +36,7 @@ def manticore(dmg):
             else:
                 print("\033[1;36;40mWOW! That was a close one! You evaded the attack!")
             if HP < 1:
-                print("\033[1;37;40mTimmy was now very confident in his abilities\nHaving Defeated the Manticore, Timmy felt invincible! \nThis was short lived! Before him appeared the Demon King!\nTimmy was terrified. But He will not back down!")
+                print("\033[1;37;40mTimmy's head was now filled with different ideas.\nWhat will he do? Back down? Or will he try to learn more about this world?")
                 finalchoices()
             elif player < 1:
                 print("\033[1;31;40mR.I.P. Timmy! GAME OVER!")
@@ -65,7 +65,7 @@ def manticore(dmg):
                 player -= 30
                 print("\033[1;31;40mYou failed to parry the enemy attack, \033[1;32;40mremaining health is",player)
             if HP < 1:
-                print("\033[1;37;40mTimmy was now very confident in his abilities\nHaving Defeated the Manticore, Timmy felt invincible! \nThis was short lived! Before him appeared the Demon King!\nTimmy was terrified. But He will not back down!")
+                print("\033[1;37;40mTimmy's head was now filled with different ideas.\nWhat will he do? Back down? Or will he try to learn more about this world?")
                 finalchoices()
             elif player < 1:
                 print("\033[1;31;40mR.I.P. Timmy! GAME OVER!")
@@ -231,26 +231,30 @@ def DemonKing(dmg):
 #The choices that will determine your fate!
 def finalchoices():
     user = int(input("\033[1;32;40m1.Explore \n2.Push Forward\n3.Give Up\nwhat will you do? "))
-    count = 1
+    counting = 1
     if user == 1:
         import random
         x = random.randint(1,10)
-        if(x == 3)
+        if(x == 3):
             print("\033[1;37;40mTimmy was now for some reason feeling bad for the murdered creatures\nHe had found a troll's family home with pictures that displayed their happiness\nPerhaps the Demon King is just a title?")
             finalchoices()
-        elif(x == 1)
+        elif(x == 1):
             print("\033[1;37;40mTimmy stumbled upon a book that displayed the rich nature of this world\nHe should probably stop exploring for his own good :)")
+            finalchoices()
         elif(x==5):
             print("\033[1;37;40mTimmy had found some food. Good he was quite hungry!\nUnknown to him, the creatures hated him for his wreckless rampage.\nNow he also ate their food! They thought silently while hiding")
+            finalchoices()
         else:
-            print("\033[1;37;40mI don't recommended that. Please beat the Demon King already.\nYou'd best not thing about refusing")
+            print("\033[1;37;40mI don't recommended that. Please beat the Demon King already.\nYou'd best not think about refusing")
+            finalchoices()
     elif user == 2:
         print("\033[1;37;40mTimmy pushed forward!")
+        print("\033[1;37;40mTimmy was now very confident in his abilities\nHaving Defeated the Manticore, Timmy felt invincible! \nThis was short lived! Before him appeared the Demon King!\nTimmy was terrified. But He will not back down!")
         DemonKing(damage)
-    elif user == 3 and count >= 1:
+    elif user == 3 and counting != 0:
         import random
         x = random.randint(1,7)
-        count -= 1
+        counting -= 1
         if(x != 3):
             print("\033[1;37;40mTimmy tried to give up on his journey and head back home\nTimmy missed his family! Inconceivable!\nAfter coming this far to give up!?!\nTimmy was forced to continue for I won't allow it!")
             finalchoices()
@@ -263,5 +267,3 @@ def finalchoices():
         print("wait... what did you do?")
         finalchoices()
 play(damage)
-
-
