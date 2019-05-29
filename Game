@@ -219,9 +219,9 @@ def DemonKing(dmg):
                     player -= 30
                     print("\033[1;31;40mOuch The Demon hurt Timmy!","You have",player," HP remaining!")
                 else:
-                    print("\033[1;33;40mThe Demon King Shrieks in pain!")
+                    print("\033[1;33;40mThe Demon King Shrieks in pain! It seems worried about someone?")
                 if HP < 1:
-                    print("\033[1;37;40mWith the Demon King weakened, \nTimmy pours holy water onto the Ooftana and delivers the final blow. \nWith the Demon King gone, Timmy now rules the world and the underworld!")
+                    print("\033[1;37;40mWith the Demon King weakened, \nTimmy pours holy water onto the Ooftana and delivers the final blow. \nWith the Demon King gone, Timmy now rules the world and the underworld!\nperhaps... this was a mistake?")
                     import sys
                     sys.exit()
                 elif player < 1:
