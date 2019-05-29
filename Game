@@ -160,7 +160,7 @@ def playChoices():
         playChoices()
 #Battle against the final boss!
 def DemonKing(dmg):
-    concoction = 5
+    concoction = 3
     HolyWater = 3
     print("Looks like we can't run from this one!\nStart the Battle!")
     HP = 500
@@ -180,7 +180,7 @@ def DemonKing(dmg):
                 HP -= dmg
                 print("\033[1;33;40mYou Attacked! \033[1;31;40mRemaining Enemy HP is",HP)
             import random
-            x = random.randint(1,5)
+            x = random.randint(1,6)
             if(x != 3):
                 player -= 30
                 print("\033[1;31;40mOuch it retaliated! \033[0;32;40mYour Remaining HP is",player)
@@ -191,7 +191,7 @@ def DemonKing(dmg):
                 import sys
                 sys.exit()
             elif player < 1:
-                print("\033[1;31;40mR.I.P. Timmy! GAME OVER!")
+                print("\033[1;37;40mTimmy was on the ground in agony.\nHe felt excruciating pain in his body.\nThat's odd? The Demon seems sad...\n \033[1;31;40mR.I.P. Timmy! GAME OVER!")
                 import sys
                 sys.exit()
         elif user == 2:
