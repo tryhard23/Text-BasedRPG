@@ -36,9 +36,8 @@ def manticore(dmg):
             else:
                 print("\033[1;36;40mWOW! That was a close one! You evaded the attack!")
             if HP < 1:
-                print("\033[1;37;40mAnd so concluded Timmy's Adventure. \nHaving Defeated the Manticore, Timmy now rules the world!")
-                import sys
-                sys.exit()
+                print("\033[1;37;40mTimmy was now very confident in his abilities\nHaving Defeated the Manticore, Timmy felt invincible! \nThis was short lived! Before him appeared the Demon King!\nTimmy was terrified. But He will not back down!")
+                finalchoices()
             elif player < 1:
                 print("\033[1;31;40mR.I.P. Timmy! GAME OVER!")
                 import sys
@@ -66,9 +65,8 @@ def manticore(dmg):
                 player -= 30
                 print("\033[1;31;40mYou failed to parry the enemy attack, \033[1;32;40mremaining health is",player)
             if HP < 1:
-                print("\033[1;37;40mAnd so concluded Timmy's Adventure. \nHaving Defeated the Manticore, Timmy now rules the world!")
-                import sys
-                sys.exit()
+                print("\033[1;37;40mTimmy was now very confident in his abilities\nHaving Defeated the Manticore, Timmy felt invincible! \nThis was short lived! Before him appeared the Demon King!\nTimmy was terrified. But He will not back down!")
+                finalchoices()
             elif player < 1:
                 print("\033[1;31;40mR.I.P. Timmy! GAME OVER!")
                 import sys
@@ -160,5 +158,110 @@ def playChoices():
     else:
         print("wait... what did you do?")
         playChoices()
+#Battle against the final boss!
+def DemonKing(dmg):
+    concoction = 5
+    HolyWater = 3
+    print("Looks like we can't run from this one!\nStart the Battle!")
+    HP = 500
+    player = char
+    while HP > 0:
+        dmg = damage * 1.75
+        user = int(input("\033[1;32;40m1. Attack\n2. Heal\n3. Holy Water\nWrite a number: "))
+        if user == 1:
+            import random
+            x = random.randint(1,8)
+            if (x == 5):
+                print("\033[1;36;40mThe Demon King Blocked the Attack!")
+            elif (x == 1 or x == 2 or x == 3):
+                HP -= dmg * 1.75
+                print("\033[1;33;40mA critical hit! \033[1;31;40mRemaining Enemy HP is",HP)
+            else:
+                HP -= dmg
+                print("\033[1;33;40mYou Attacked! \033[1;31;40mRemaining Enemy HP is",HP)
+            import random
+            x = random.randint(1,5)
+            if(x != 3):
+                player -= 30
+                print("\033[1;31;40mOuch it retaliated! \033[0;32;40mYour Remaining HP is",player)
+            else:
+                print("\033[1;36;40mWOW! That was a close one! You evaded the attack!")
+            if HP < 1:
+                print("\033[1;37;40mWith the Demon King weakened, \nTimmy pours holy water onto the Ooftana and delivers the final blow. \nWith the Demon King gone, Timmy now rules the world and the underworld!")
+                import sys
+                sys.exit()
+            elif player < 1:
+                print("\033[1;31;40mR.I.P. Timmy! GAME OVER!")
+                import sys
+                sys.exit()
+        elif user == 2:
+            if concoction > 0:
+                player += 50
+                concoction -= 1
+                print("\033[1;33;40m You took a gulp of a Holy concoction")
+                print("\033[1;32;40m +50 HP.",concoction,"remain!")
+                import random
+                x = random.randint(1,3)
+                if(x != 2):
+                    player -= 30
+                    print("\033[1;31;40mOuch it hurt Timmy!","You have",player,"remaining!")
+                else:
+                    print("\033[1;33;40mThe Demon King allows your futile resistance!")
+        elif user == 3:
+            if HolyWater > 0:
+                HP -= 50
+                HolyWater -= 1
+                print("\033[1;33;40m You threw holy water at the Demon King!","Demon King HP is",HP)
+                print("\033[1;32;40m",HolyWater,"remain!")
+                import random
+                x = random.randint(1,3)
+                if(x != 2):
+                    player -= 30
+                    print("\033[1;31;40mOuch The Demon hurt Timmy!","You have",player," HP remaining!")
+                else:
+                    print("\033[1;33;40mThe Demon King Shrieks in pain!")
+                if HP < 1:
+                    print("\033[1;37;40mWith the Demon King weakened, \nTimmy pours holy water onto the Ooftana and delivers the final blow. \nWith the Demon King gone, Timmy now rules the world and the underworld!")
+                    import sys
+                    sys.exit()
+                elif player < 1:
+                    print("\033[1;31;40mR.I.P. Timmy! GAME OVER!")
+                    import sys
+                    sys.exit()
+#The choices that will determine your fate!
+def finalchoices():
+    user = int(input("\033[1;32;40m1.Explore \n2.Push Forward\n3.Give Up\nwhat will you do? "))
+    count = 1
+    if user == 1:
+        import random
+        x = random.randint(1,10)
+        if(x == 3)
+            print("\033[1;37;40mTimmy was now for some reason feeling bad for the murdered creatures\nHe had found a troll's family home with pictures that displayed their happiness\nPerhaps the Demon King is just a title?")
+            finalchoices()
+        elif(x == 1)
+            print("\033[1;37;40mTimmy stumbled upon a book that displayed the rich nature of this world\nHe should probably stop exploring for his own good :)")
+        elif(x==5):
+            print("\033[1;37;40mTimmy had found some food. Good he was quite hungry!\nUnknown to him, the creatures hated him for his wreckless rampage.\nNow he also ate their food! They thought silently while hiding")
+        else:
+            print("\033[1;37;40mI don't recommended that. Please beat the Demon King already.\nYou'd best not thing about refusing")
+    elif user == 2:
+        print("\033[1;37;40mTimmy pushed forward!")
+        DemonKing(damage)
+    elif user == 3 and count >= 1:
+        import random
+        x = random.randint(1,7)
+        count -= 1
+        if(x != 3):
+            print("\033[1;37;40mTimmy tried to give up on his journey and head back home\nTimmy missed his family! Inconceivable!\nAfter coming this far to give up!?!\nTimmy was forced to continue for I won't allow it!")
+            finalchoices()
+        else:
+            print("\033[1;37;40mTimmy somehow managed to avoid me and escaped through another portal. \nIt seems Timmy did not like his fate being forced upon him and chose his own path")
+            print("\033[1;37;40mUnkown to Timmy though, time progresses faster in this dimension!\nHis family were now 3x as old and he was still just a brat!\nNot a happy ending huh")
+            import sys
+            sys.exit()
+    else:
+        print("wait... what did you do?")
+        finalchoices()
 play(damage)
+
 
