@@ -234,7 +234,7 @@ def finalchoices():
     counting = 1
     if user == 1:
         import random
-        x = random.randint(1,10)
+        x = random.randint(1,7)
         if(x == 3):
             print("\033[1;37;40mTimmy was now for some reason feeling bad for the murdered creatures\nHe had found a troll's family home with pictures that displayed their happiness\nPerhaps the Demon King is just a title?")
             finalchoices()
